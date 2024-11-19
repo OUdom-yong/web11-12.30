@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class=" container mt-5">
+        <img id="image" width="350px" height="300px" class=" rounded" src="/img/hok1_.jpg" alt="">
+        <br>
+        <button id="prev" class=" btn btn-dark px-5 rounded-pill mt-3" >prev</button>
+        <button id="next" class=" btn btn-dark px-5 rounded-pill mt-3 ">Next</button>
+    </div>
+</body>
+<script>
+    let imges=['img/hok1_.jpg','img/hok2_.jpg','img/hok3_.jpg'];
+    let currentIndex=0;
+    let picture= document.getElementById('image');
+    let PrevButton = document.getElementById('prev');
+    let NextButton = document.getElementById('next');
+    // document.getElementById('prev').onclick=()=>{};
+    PrevButton.addEventListener('click', function(){
+        currentIndex = (currentIndex - 1 + imges.length) % imges.length;
+        picture.src = imges[currentIndex]; 
+    });
+    NextButton.addEventListener('click', function(){
+        currentIndex = (currentIndex - 1 + imges.length) % imges.length;
+        picture.src = imges[currentIndex]; 
+    });
+</script>
+</html>
